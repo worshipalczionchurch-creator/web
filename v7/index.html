@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>錫安傳道會豐盛堂 - 開創領域新機遇 活出召命作門徒</title>
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 統一的 Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3A5A78',
+                        secondary: '#7A9D54',
+                        accent: '#E6B17E',
+                        warm: '#F5F1E8',
+                        dark: '#212529',
+                        light: '#FFFFFF',
+                        highlight: '#C44536'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        'hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            }
+            .text-shadow-lg {
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            }
+            .transition-all-300 {
+                transition: all 0.3s ease;
+            }
+            .bg-glass {
+                background: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-dark bg-warm">
+    <!-- 導航欄 -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <img src=".\img\Zion.gif" alt="錫安傳道會豐盛堂" class="h-12 w-auto">
+                <div>
+                    <h1 class="text-xl font-bold text-primary">錫安傳道會豐盛堂</h1>
+                    <p class="text-xs text-primary/80">Abundant Life Church</p>
+                </div>
+            </a>
+            
+            <!-- 桌面端導航 -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-primary hover:text-highlight font-medium transition-all-300">首頁</a>
+                <a href="#about" class="text-primary hover:text-highlight font-medium transition-all-300">關於我們</a>
+                <a href="#services" class="text-primary hover:text-highlight font-medium transition-all-300">聚會時間</a>
+                <a href="#events" class="text-primary hover:text-highlight font-medium transition-all-300">最新活動</a>
+                <a href="#contact" class="text-primary hover:text-highlight font-medium transition-all-300">聯繫我們</a>
+            </nav>
+            
+            <!-- 行動端菜單按鈕 -->
+            <button id="menu-toggle" class="md:hidden text-primary text-2xl focus:outline-none">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- 行動端導航菜單 -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="#" class="text-primary hover:text-highlight font-medium py-2 transition-all-300">首頁</a>
+                <a href="#about" class="text-primary hover:text-highlight font-medium py-2 transition-all-300">關於我們</a>
+                <a href="#services" class="text-primary hover:text-highlight font-medium py-2 transition-all-300">聚會時間</a>
+                <a href="#events" class="text-primary hover:text-highlight font-medium py-2 transition-all-300">最新活動</a>
+                <a href="#contact" class="text-primary hover:text-highlight font-medium py-2 transition-all-300">聯繫我們</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄區域 -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/a5b644065306402a977210ae61dccbc5~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=20260211114936D9AE973DF00A5E248038&rrcfp=f06b921b&x-expires=1773373830&x-signature=XwDywVgI72u6T133T76pbzxY%2FZg%3D" alt="教會敬拜" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-dark/50"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 text-shadow-lg">開創領域新機遇 活出召命作門徒</h1>
+            <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto text-shadow">歡迎來到錫安傳道會豐盛堂，我們是一個充滿愛與包容的基督教大家庭</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#about" class="bg-highlight hover:bg-highlight/90 text-white font-medium py-3 px-8 rounded-full transition-all-300 shadow-soft hover:shadow-hover">
+                    了解更多
+                </a>
+                <a href="#contact" class="bg-transparent hover:bg-white/20 text-white border-2 border-white font-medium py-3 px-8 rounded-full transition-all-300">
+                    聯繫我們
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <a href="#about" class="text-white text-4xl">
+                <i class="fa fa-angle-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 關於我們 -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">關於我們</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-lg text-dark/80 max-w-3xl mx-auto">錫安傳道會豐盛堂成立於1985年，是一個充滿活力和愛心的基督教社區</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-bold text-primary mb-4">我們的使命</h3>
+                    <p class="text-dark/80 mb-6">
+                        我們致力於在基督的愛中團結起來，通過禱告、敬拜和聖經教導，培養信徒與神的個人關係，並且積極參與社區服務，傳播基督的愛與福音。
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold text-primary mb-4">我們的信仰</h3>
+                    <p class="text-dark/80 mb-6">
+                        我們相信聖經是神的話語，耶穌基督是神的兒子，為拯救人類而死並復活。我們遵循路德宗的教義，強調因信稱義、聖經的權威性以及神的恩典。
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                    <!--
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                <i class="fa fa-users text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary">500+</h4>
+                                <p class="text-sm text-dark/70">教會成員</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                <i class="fa fa-heart text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary">20+</h4>
+                                <p class="text-sm text-dark/70">服務團隊</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                <i class="fa fa-globe text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary">15+</h4>
+                                <p class="text-sm text-dark/70">國際宣教</p>
+                            </div>
+                        </div>
+                      -->
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2 rounded-lg overflow-hidden shadow-soft">
+                    <img src="https://p26-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/8f9429a32cbd435b8cdf67cfaada71c4~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=20260211114936D9AE973DF00A5E248038&rrcfp=f06b921b&x-expires=17733830&x-signature=lh3WRW5O1JY66EgoIaeN1YkUR9I%3D" alt="教會團契" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聚會時間 -->
+    <section id="services" class="py-20 bg-warm">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">聚會時間</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-lg text-dark/80 max-w-3xl mx-auto">我們歡迎您參加我們的各種聚會和活動</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 成人崇拜 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-soft hover:shadow-hover transition-all-300">
+                    <div class="bg-primary text-white p-6">
+                        <h3 class="text-xl font-bold mb-2">成人崇拜</h3>
+                        <p class="text-white/80">每星期日</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-clock-o text-primary text-xl mr-3"></i>
+                            <div>
+                                <p class="font-medium">上午 10:00</p>
+                                <p class="text-sm text-dark/70">主日崇拜</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-calendar text-primary text-xl mr-3"></i>
+                            <div>
+                                <p class="font-medium">每月第一個主日</p>
+                                <p class="text-sm text-dark/70">聖餐禮</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-map-marker text-primary text-xl mr-3"></i>
+                            <p>主禮拜堂</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 兒童教會 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-soft hover:shadow-hover transition-all-300">
+                    <div class="bg-secondary text-white p-6">
+                        <h3 class="text-xl font-bold mb-2">兒童教會</h3>
+                        <p class="text-white/80">每星期日</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-clock-o text-secondary text-xl mr-3"></i>
+                            <div>
+                                <p class="font-medium">上午 10:00</p>
+                                <p class="text-sm text-dark/70">兒童主日學</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-map-marker text-secondary text-xl mr-3"></i>
+                            <p>兒童教室</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 禱告會 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-soft hover:shadow-hover transition-all-300">
+                    <div class="bg-accent text-white p-6">
+                        <h3 class="text-xl font-bold mb-2">禱告會</h3>
+                        <p class="text-white/80">每星期六</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-clock-o text-accent text-xl mr-3"></i>
+                            <div>
+                                <p class="font-medium">上午 8:30</p>
+                                <p class="text-sm text-dark/70">晨禱會</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-map-marker text-accent text-xl mr-3"></i>
+                            <p>教會樓上</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 長者崇拜 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-soft hover:shadow-hover transition-all-300">
+                    <div class="bg-highlight text-white p-6">
+                        <h3 class="text-xl font-bold mb-2">長者崇拜</h3>
+                        <p class="text-white/80">每星期六</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-clock-o text-highlight text-xl mr-3"></i>
+                            <div>
+                                <p class="font-medium">上午 10:00</p>
+                                <p class="text-sm text-dark/70">長者聚會</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-map-marker text-highlight text-xl mr-3"></i>
+                            <p>長者活動中心</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 中學小組 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-soft hover:shadow-hover transition-all-300">
+                    <div class="bg-primary text-white p-6">
+                        <h3 class="text-xl font-bold mb-2">中學小組</h3>
+                        <p class="text-white/80">每星期六</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-clock-o text-primary text-xl mr-3"></i>
+                            <div>
+                                <p class="font-medium">下午 2:00</p>
+                                <p class="text-sm text-dark/70">青少年聚會</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-map-marker text-primary text-xl mr-3"></i>
+                            <p>青少年活動室</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 使命小組與路得團 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-soft hover:shadow-hover transition-all-300">
+                    <div class="bg-secondary text-white p-6">
+                        <h3 class="text-xl font-bold mb-2">使命小組與路得團</h3>
+                        <p class="text-white/80">特定日子</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-users text-secondary text-xl mr-3"></i>
+                            <div>
+                                <p class="font-medium">按每組特定日子</p>
+                                <p class="text-sm text-dark/70">使命小組</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="font-medium mb-2">使命小組分組：</p>
+                            <ul class="list-disc list-inside text-sm text-dark/80 space-y-1">
+                                <li>中學團契導師小組</li>
+                                <li>大專初職組</li>
+                                <li>藝術/興趣小組</li>
+                                <li>桌遊小組</li>
+                                <li>讚美操</li>
+                                <li>社區家長支援小組</li>
+                                <li>惜食堂 - 生生不惜小組</li>
+                                <li>情同手足伉儷小組</li>
+                                <li>音樂小組</li>
+                                <li>運動小組</li>
+                                <li>生活品味組</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-laptop text-secondary text-xl mr-3"></i>
+                            <div>
+                                <p class="font-medium">週四 上午 10:00</p>
+                                <p class="text-sm text-dark/70">路得團(家長)網上查經班</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-map-marker text-secondary text-xl mr-3"></i>
+                            <p>各組指定地點</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最新活動 -->
+    <section id="events" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">最新活動</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-lg text-dark/80 max-w-3xl mx-auto">參與我們的活動，與弟兄姊妹一起成長</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 活動1 -->
+                <div class="bg-warm rounded-lg overflow-hidden shadow-soft hover:shadow-hover transition-all-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://p11-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/9d7b1aca28a147e79eae79a012ec2fd4~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=20260211114936D9AE973DF00A5E248038&rrcfp=f06b921b&x-expires=1773373832&x-signature=%2FtRwjuXUMaMMdkeLE%2FDYcJ89eig%3D" alt="社區服務日" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="bg-secondary/20 text-secondary text-sm font-medium px-3 py-1 rounded-full">社區服務</span>
+                            <span class="text-dark/70 text-sm">2025年7月15日</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">社區服務日</h3>
+                        <p class="text-dark/80 mb-4">
+                            一起參與社區服務，關愛老人和兒童，傳播基督的愛與關懷。
+                        </p>
+                        <a href="#" class="text-highlight hover:text-highlight/80 font-medium flex items-center transition-all-300">
+                            了解詳情 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 活動2 -->
+                <div class="bg-warm rounded-lg overflow-hidden shadow-soft hover:shadow-hover transition-all-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://p26-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/8f9429a32cbd435b8cdf67cfaada71c4~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=20260211114936D9AE973DF00A5E248038&rrcfp=f06b921b&x-expires=17733830&x-signature=lh3WRW5O1JY66EgoIaeN1YkUR9I%3D" alt="青年夏令營" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="bg-accent/20 text-accent text-sm font-medium px-3 py-1 rounded-full">青年活動</span>
+                            <span class="text-dark/70 text-sm">2025年8月1-5日</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">青年夏令營</h3>
+                        <p class="text-dark/80 mb-4">
+                            為青少年舉辦的夏令營活動，通過各種活動和教導，加深對神的認識。
+                        </p>
+                        <a href="#" class="text-highlight hover:text-highlight/80 font-medium flex items-center transition-all-300">
+                            了解詳情 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 活動3 -->
+                <div class="bg-warm rounded-lg overflow-hidden shadow-soft hover:shadow-hover transition-all-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/a5b644065306402a977210ae61dccbc5~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=20260211114936D9AE973DF00A5E248038&rrcfp=f06b921b&x-expires=1773373830&x-signature=XwDywVgI72u6T133T76pbzxY%2FZg%3D" alt="聖樂讚美會" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">敬拜讚美</span>
+                            <span class="text-dark/70 text-sm">2025年7月25日</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">聖樂讚美會</h3>
+                        <p class="text-dark/80 mb-4">
+                            特別的聖樂讚美會，通過音樂和詩歌，讚美神的榮耀和慈愛。
+                        </p>
+                        <a href="#" class="text-highlight hover:text-highlight/80 font-medium flex items-center transition-all-300">
+                            了解詳情 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all-300 shadow-soft hover:shadow-hover">
+                    查看更多活動
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯繫我們 -->
+    <section id="contact" class="py-20 bg-warm">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">聯繫我們</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-lg text-dark/80 max-w-3xl mx-auto">無論您有任何問題或需要，我們都願意傾聽和幫助</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- 聯繫表單 -->
+                <div class="bg-white rounded-lg p-8 shadow-soft">
+                    <h3 class="text-2xl font-bold text-primary mb-6">給我們留言</h3>
+                    <form id="contact-form" action="mailto:alczionchurch@gmail.com" method="post" enctype="text/plain">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-dark/80 font-medium mb-2">姓名</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-dark/80 font-medium mb-2">電子郵件</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-dark/80 font-medium mb-2">主題</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-dark/80 font-medium mb-2">留言內容</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-all-300 shadow-soft hover:shadow-hover">
+                            提交留言
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- 聯繫信息 -->
+                <div>
+                    <div class="bg-white rounded-lg p-8 shadow-soft mb-8">
+                        <h3 class="text-2xl font-bold text-primary mb-6">聯繫信息</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                    <i class="fa fa-map-marker text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary mb-1">地址</h4>
+                                    <p class="text-dark/80">新界荃灣青山道264-298號南豐中心1805-1806室</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                    <i class="fa fa-phone text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary mb-1">電話</h4>
+                                    <p class="text-dark/80">24211948</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                    <i class="fa fa-envelope text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary mb-1">電子郵件</h4>
+                                    <p class="text-dark/80">alczionchurch@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                    <i class="fa fa-clock-o text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary mb-1">辦公時間</h4>
+                                    <p class="text-dark/80">禮拜一至禮拜五: 9:00 - 17:00</p>
+                                    <p class="text-dark/80">禮拜六: 9:00 - 12:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 地圖 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-soft h-64">
+                        <div class="h-50 overflow-hidden">
+        		            <img src="./img/map.png" alt="Map" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+        		        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁腳 -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- 教會信息 -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src=".\img\Zion.gif" alt="錫安傳道會豐盛堂" class="h-10 w-auto">
+                        <div>
+                            <h3 class="text-lg font-bold">錫安傳道會豐盛堂</h3>
+                            <p class="text-xs text-white/80">Abundant Life Church</p>
+                        </div>
+                    </div>
+                    <p class="text-white/80 mb-6">
+                        我們是一個充滿愛與包容的基督教大家庭，致力於傳播基督的愛與福音。
+                    </p>
+                    <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/share/16Ezet7oUE/" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-highlight transition-all-300">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-highlight transition-all-300">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                        <div class="flex space-x-4">
+                            <div class="text-center">
+                                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/0c5f32e530594fb48e752b597b382a09.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=202602120833278E6DAF86E9854B295017&rrcfp=8a172a1a&x-expires=1771461207&x-signature=bvFIH5GAtanMMhVBE8G2FdMqwB0%3D" alt="Facebook QR Code" class="w-20 h-20 cursor-pointer hover:scale-110 transition-transform duration-300" onclick="toggleQRCodeSize(this)">
+                                <p class="text-xs text-white/80 mt-1">Facebook (點擊放大)</p>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/048f50904b2c4f9681a77f53dd2e3ef4.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=202602120833278E6DAF86E9854B295017&rrcfp=8a172a1a&x-expires=1771461207&x-signature=2b%2FG5VhGWhgL85hNNYcmaxje5cA%3D" alt="Instagram QR Code" class="w-20 h-20">
+                                <p class="text-xs text-white/80 mt-1">Instagram</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 快速鏈接 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">快速鏈接</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-white/80 hover:text-highlight transition-all-300">首頁</a></li>
+                        <li><a href="#about" class="text-white/80 hover:text-highlight transition-all-300">關於我們</a></li>
+                        <li><a href="#services" class="text-white/80 hover:text-highlight transition-all-300">聚會時間</a></li>
+                        <li><a href="#events" class="text-white/80 hover:text-highlight transition-all-300">最新活動</a></li>
+                        <li><a href="#contact" class="text-white/80 hover:text-highlight transition-all-300">聯繫我們</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 聚會時間 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">聚會時間</h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between">
+                            <span class="text-white/80">主日崇拜 (上午)</span>
+                            <span class="text-white/80">10:00 - 11:30</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-white/80">禱告會</span>
+                            <span class="text-white/80">週六 09:30</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-white/80"></span>
+                            <span class="text-white/80"></span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-white/80"></span>
+                            <span class="text-white/80"></span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-white/80"></span>
+                            <span class="text-white/80"></span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 電子報 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">訂閱電子報</h3>
+                    <p class="text-white/80 mb-4">
+                        訂閱我們的電子報，獲取最新消息和活動資訊。
+                    </p>
+                    <form id="newsletter-form" class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="您的電子郵件" class="flex-1 px-4 py-2 rounded-l-lg focus:outline-none text-dark">
+                            <button type="submit" class="bg-highlight hover:bg-highlight/90 px-4 py-2 rounded-r-lg transition-all-300">
+                                <i class="fa fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <p class="text-white/60 text-sm">
+                        我們尊重您的隱私，不會向第三方分享您的信息。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 pt-8 text-center">
+                <p class="text-white/60 text-sm">
+                    &copy; 2025 錫安傳道會豐盛堂. 保留所有權利.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回頂部按鈕 -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-soft hover:shadow-hover transition-all-300 opacity-0 invisible">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 導航欄滾動效果
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-white', 'shadow-soft');
+                navbar.classList.remove('bg-transparent');
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                navbar.classList.remove('bg-white', 'shadow-soft');
+                navbar.classList.add('bg-transparent');
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        // 行動端菜單切換
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuToggle.innerHTML = mobileMenu.classList.contains('hidden') 
+                ? '<i class="fa fa-bars"></i>' 
+                : '<i class="fa fa-times"></i>';
+        });
+        
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // 關閉行動端菜單
+                    mobileMenu.classList.add('hidden');
+                    menuToggle.innerHTML = '<i class="fa fa-bars"></i>';
+                    
+                    // 平滑滾動到目標位置
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 返回頂部按鈕
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 表單提交處理
+        const contactForm = document.getElementById('contact-form');
+        const newsletterForm = document.getElementById('newsletter-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            // 獲取表單數據
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // 檢查必填字段
+            if (!name || !email || !subject || !message) {
+                alert('請填寫所有必填字段');
+                e.preventDefault();
+                return;
+            }
+            
+            // 設置郵件主題
+            document.getElementById('subject').value = `[教會留言] ${subject} - 來自 ${name}`;
+            
+            // 模擬表單提交效果
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fa fa-spinner fa-spin mr-2"></i> 提交中...';
+            
+            // 讓表單繼續提交到郵件客戶端
+            // 注意：實際的郵件發送取決於用戶的郵件客戶端設置
+        });
+        
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // 模擬表單提交
+            const submitButton = newsletterForm.querySelector('button[type="submit"]');
+            const originalIcon = submitButton.innerHTML;
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fa fa-spinner fa-spin"></i>';
+            
+            setTimeout(() => {
+                submitButton.innerHTML = '<i class="fa fa-check"></i>';
+                
+                // 清空輸入框
+                emailInput.value = '';
+                
+                // 恢復按鈕
+                setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalIcon;
+                }, 3000);
+            }, 1500);
+        });
+        
+   
+    </script>
+</body>
+</html>
